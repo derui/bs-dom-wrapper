@@ -5,7 +5,6 @@ module type TYPE = sig
 end
 
 module Make(T:TYPE) = struct
-  include Bs_dom_wrapper_node.Make(T)
 
   external attributes: T.t -> Dom.namedNodeMap = "" [@@bs.get]
   external classList: T.t -> Dom.domTokenList = "" [@@bs.get]
@@ -73,4 +72,6 @@ module Make(T:TYPE) = struct
 
 end
 
+include Bs_dom_wrapper_event_target.Make(struct type t = Dom.element end)
+include Bs_dom_wrapper_node.Make(struct type t = Dom.element end)
 include Make(struct type t = Dom.element end)

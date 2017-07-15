@@ -5,7 +5,6 @@ end
 
 (* Functor for implement Node interface *)
 module Make(T:TYPE) = struct
-  include Bs_dom_wrapper_event_target.Make(T)
 
   external baseURI: T.t -> string = "" [@@bs.get]
   external childNodes: T.t -> Dom.nodeList = "" [@@bs.get]
@@ -45,4 +44,5 @@ module Make(T:TYPE) = struct
  *)
 end
 
+include Bs_dom_wrapper_event_target.Make(struct type t = Dom.node end)
 include Make(struct type t = Dom.node end)
