@@ -1,0 +1,8 @@
+{
+  "name": "bs-dom-wrapper",
+  "version": "0.1.0",
+  "sources": [
+    {"dir": "src", "public": "all"}
+  ],
+  "generate-merlin": true
+}
