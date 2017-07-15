@@ -10,16 +10,16 @@ module Make(T:TYPE) = struct
   external classList: T.t -> Dom.domTokenList = "" [@@bs.get]
 
   external className: T.t -> string = "" [@@bs.get]
-  external setClassName: T.t -> string -> unit = "" [@@bs.set]
+  external setClassName: T.t -> string -> unit = "className" [@@bs.set]
 
   external computedName: T.t -> string = "" [@@bs.get]
   external computedRole: T.t -> string = "" [@@bs.get]
 
   external id: T.t -> string = "" [@@bs.get]
-  external setId: T.t -> string -> unit = "" [@@bs.set]
+  external setId: T.t -> string -> unit = "id" [@@bs.set]
 
   external innerHTML: T.t -> string = "" [@@bs.get]
-  external setInnerHTML: T.t -> string -> unit = "" [@@bs.set]
+  external setInnerHTML: T.t -> string -> unit = "innerHTML" [@@bs.set]
 
   external localName: T.t -> string = "" [@@bs.get]
   external namespaceURI: T.t -> string option = "" [@@bs.get] [@@bs.return null_to_opt]

@@ -15,13 +15,13 @@ module Make(T:TYPE) = struct
   external nodeType: T.t -> int = "" [@@bs.get]
 
   external nodeValue: T.t -> string option = "" [@@bs.get] [@@bs.return null_to_opt]
-  external setNodeValue: T.t -> string -> unit = "" [@@bs.set]
+  external setNodeValue: T.t -> string -> unit = "nodeValue" [@@bs.set]
 
   external ownerDocument: T.t -> Dom.document = "" [@@bs.get]
   external parentNode: T.t -> Dom.node option = "" [@@bs.get] [@@bs.return null_to_opt]
   external previousSibling: T.t -> Dom.node option = "" [@@bs.get][@@bs.return null_to_opt]
   external textContent: T.t -> string = "" [@@bs.get]
-  external setTextContent: T.t -> string -> unit = "" [@@bs.set]
+  external setTextContent: T.t -> string -> unit = "textContent" [@@bs.set]
 
   external appendChild: 'a Dom.node_like -> unit = "" [@@bs.send.pipe:T.t]
   external cloneNode: T.t = "" [@@bs.send.pipe:T.t]
