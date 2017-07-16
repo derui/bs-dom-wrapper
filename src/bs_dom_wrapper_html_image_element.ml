@@ -4,9 +4,9 @@ module Events = Bs_dom_wrapper_events
 type image
 type t = image Dom.htmlElement_like
 
-include Bs_dom_wrapper_event_target.Make(struct type nonrec t = t end)
-include Bs_dom_wrapper_node.Make(struct type nonrec t = t end)
-include Bs_dom_wrapper_element.Make(struct type nonrec t = t end)
+include Bs_dom_wrapper_nodes_event_target.Make(struct type nonrec t = t end)
+include Bs_dom_wrapper_nodes_node.Make(struct type nonrec t = t end)
+include Bs_dom_wrapper_nodes_element.Make(struct type nonrec t = t end)
 include Bs_dom_wrapper_html_element.Make(struct type nonrec t = t end)
 
 (* Constructor *)

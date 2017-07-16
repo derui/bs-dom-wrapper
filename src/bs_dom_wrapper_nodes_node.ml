@@ -44,5 +44,5 @@ module Make(T:TYPE) = struct
  *)
 end
 
-include Bs_dom_wrapper_event_target.Make(struct type t = Dom.node end)
+include Bs_dom_wrapper_nodes_event_target.Make(struct type t = Dom.node end)
 include Make(struct type t = Dom.node end)

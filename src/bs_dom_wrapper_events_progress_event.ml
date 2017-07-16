@@ -1,6 +1,6 @@
 type t = Dom.progressEvent
 
-include Bs_dom_wrapper_event.Make(struct type nonrec t = t end)
+include Bs_dom_wrapper_events_event.Make(struct type nonrec t = t end)
 
 (* define constructor for this event *)
 external make: string -> t = "ProgressEvent" [@@bs.new]

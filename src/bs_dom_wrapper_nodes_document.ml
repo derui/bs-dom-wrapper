@@ -4,7 +4,7 @@ module type TYPE = sig
   type t
 end
 
-module Types = Bs_dom_wrapper_event_types
+module Types = Bs_dom_wrapper_nodes_types
 
 module Make(T:TYPE) = struct
   (* properties *)
@@ -71,7 +71,7 @@ module Make(T:TYPE) = struct
 end
 
 type t = Dom.document
-include Bs_dom_wrapper_event_target.Make(struct type t = Dom.document end)
-include Bs_dom_wrapper_node.Make(struct type t = Dom.document end)
-include Bs_dom_wrapper_parent_node.Make(struct type t = Dom.document end)
+include Bs_dom_wrapper_nodes_event_target.Make(struct type t = Dom.document end)
+include Bs_dom_wrapper_nodes_node.Make(struct type t = Dom.document end)
+include Bs_dom_wrapper_nodes_parent_node.Make(struct type t = Dom.document end)
 include Make(struct type t = Dom.document end)

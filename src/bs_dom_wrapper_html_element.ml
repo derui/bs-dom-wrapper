@@ -53,7 +53,7 @@ module Make(T:TYPE) = struct
 
 end
 
-include Bs_dom_wrapper_event_target.Make(struct type t = Dom.htmlElement end)
-include Bs_dom_wrapper_node.Make(struct type t = Dom.htmlElement end)
-include Bs_dom_wrapper_element.Make(struct type t = Dom.htmlElement end)
+include Bs_dom_wrapper_nodes_event_target.Make(struct type t = Dom.htmlElement end)
+include Bs_dom_wrapper_nodes_node.Make(struct type t = Dom.htmlElement end)
+include Bs_dom_wrapper_nodes_element.Make(struct type t = Dom.htmlElement end)
 include Make(struct type t = Dom.htmlElement end)

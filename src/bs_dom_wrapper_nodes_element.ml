@@ -67,9 +67,9 @@ module Make(T:TYPE) = struct
 
 end
 
-include Bs_dom_wrapper_event_target.Make(struct type t = Dom.element end)
-include Bs_dom_wrapper_node.Make(struct type t = Dom.element end)
-include Bs_dom_wrapper_parent_node.Make(struct type t = Dom.element end)
-include Bs_dom_wrapper_child_node.Make(struct type t = Dom.element end)
-include Bs_dom_wrapper_non_document_type_child_node.Make(struct type t = Dom.element end)
+include Bs_dom_wrapper_nodes_event_target.Make(struct type t = Dom.element end)
+include Bs_dom_wrapper_nodes_node.Make(struct type t = Dom.element end)
+include Bs_dom_wrapper_nodes_parent_node.Make(struct type t = Dom.element end)
+include Bs_dom_wrapper_nodes_child_node.Make(struct type t = Dom.element end)
+include Bs_dom_wrapper_nodes_non_document_type_child_node.Make(struct type t = Dom.element end)
 include Make(struct type t = Dom.element end)

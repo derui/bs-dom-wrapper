@@ -1,7 +1,7 @@
 (* Declare canvas element FFI *)
 
-module Types = Bs_dom_wrapper_event_types
-module Image_element = Bs_dom_wrapper_image_element
+module Types = Bs_dom_wrapper_nodes_types
+module Image_element = Bs_dom_wrapper_html_image_element
 module Blob = Bs_dom_wrapper_blob
 
 module Context = struct
@@ -14,9 +14,9 @@ end
 type canvas
 type t = canvas Dom.htmlElement_like
 
-include Bs_dom_wrapper_event_target.Make(struct type t = Dom.element end)
-include Bs_dom_wrapper_node.Make(struct type t = Dom.element end)
-include Bs_dom_wrapper_element.Make(struct type t = Dom.element end)
+include Bs_dom_wrapper_nodes_event_target.Make(struct type t = Dom.element end)
+include Bs_dom_wrapper_nodes_node.Make(struct type t = Dom.element end)
+include Bs_dom_wrapper_nodes_element.Make(struct type t = Dom.element end)
 include Bs_dom_wrapper_html_element.Make(struct type t = Dom.element end)
 
 (* properties *)
