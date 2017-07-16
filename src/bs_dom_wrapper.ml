@@ -1,14 +1,9 @@
-(* Wrapper *)
+(* Wrapper main *)
 
 module Events = Bs_dom_wrapper_events
-
-external create_element : Dom.document -> string -> Dom.node = "createElement" [@@bs.send]
-
-(* binding document.createTextNode *)
-external create_text_node : Dom.document -> string -> Dom.node = "createTextNode" [@@bs.send]
-
-external get_by_id : Dom.document -> string -> Dom.node option =
-  "getElementById" [@@bs.send] [@@bs.return null_to_opt]
-
-external query_selector : Dom.document -> string -> Dom.node option =
-  "querySelector" [@@bs.send] [@@bs.return null_to_opt]
+module Html = Bs_dom_wrapper_html
+module Nodes = Bs_dom_wrapper_nodes
+module Blob = Bs_dom_wrapper_blob
+module File = Bs_dom_wrapper_file
+module File_reader = Bs_dom_wrapper_file_reader
+module Form_data = Bs_dom_wrapper_form_data

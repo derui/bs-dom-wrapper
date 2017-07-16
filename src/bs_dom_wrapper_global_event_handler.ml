@@ -1,2 +1,0 @@
-(* Declare global event handler *)
-

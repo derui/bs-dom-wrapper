@@ -48,9 +48,6 @@ module Make(T:TYPE) = struct
   external hasAttributeNS: string -> string -> bool = "" [@@bs.send.pipe: T.t]
   external hasAttributes: bool = "" [@@bs.send.pipe: T.t]
   external matches: string -> bool = "" [@@bs.send.pipe: T.t]
-  external querySelector: string -> Dom.element option = "" [@@bs.send.pipe: T.t]
-                                                           [@@bs.return null_to_opt]
-  external querySelectorAll: string -> Dom.nodeList = "" [@@bs.send.pipe: T.t]
   external remove: unit = "" [@@bs.send.pipe: T.t]
   external removeAttribute: string -> unit = "" [@@bs.send.pipe: T.t]
   external removeAttributeNS: string -> string -> unit = "" [@@bs.send.pipe: T.t]
@@ -61,8 +58,6 @@ module Make(T:TYPE) = struct
    - client*
    - outerHTML
    - scroll*
-   - nextElementSibling
-   - previousElementSibling
    - shadowRoot
    - slot
    - ongotpointercapture
@@ -74,4 +69,7 @@ end
 
 include Bs_dom_wrapper_event_target.Make(struct type t = Dom.element end)
 include Bs_dom_wrapper_node.Make(struct type t = Dom.element end)
+include Bs_dom_wrapper_parent_node.Make(struct type t = Dom.element end)
+include Bs_dom_wrapper_child_node.Make(struct type t = Dom.element end)
+include Bs_dom_wrapper_non_document_type_child_node.Make(struct type t = Dom.element end)
 include Make(struct type t = Dom.element end)
