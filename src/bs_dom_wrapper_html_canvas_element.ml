@@ -1,6 +1,6 @@
 (* Declare canvas element FFI *)
 
-module Types = Bs_dom_wrapper_nodes_types
+module Types = Bs_dom_wrapper_html_types
 module Image_element = Bs_dom_wrapper_html_image_element
 module Blob = Bs_dom_wrapper_blob
 
