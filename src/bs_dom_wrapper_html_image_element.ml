@@ -34,3 +34,6 @@ external setSrcset: t -> string -> unit = "srcset" [@@bs.set]
 
 external x: t -> int = "" [@@bs.get]
 external y: t -> int = "" [@@bs.get]
+
+(* event handlers *)
+external setOnload: t -> ('a Dom.event_like -> unit) -> unit = "onload" [@@bs.set]
