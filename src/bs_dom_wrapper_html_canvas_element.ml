@@ -8,7 +8,8 @@ module Context = struct
   type t
 
   (* binding drawImage *)
-  external draw_image: Image_element.t -> int -> int -> unit = "drawImage" [@@bs.send.pipe:t]
+  external drawImage: Image_element.t -> int -> int -> unit = "" [@@bs.send.pipe:t]
+  external clearRect: int -> int -> int -> int -> unit = "" [@@bs.send.pipe:t]
 end
 
 type canvas
