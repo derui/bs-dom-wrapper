@@ -1,3 +1,4 @@
+type base = Dom._progressEvent
 type t = Dom.progressEvent
 
 include Bs_dom_wrapper_events_event.Make(struct type nonrec t = t end)

@@ -1,5 +1,6 @@
 module Types = Bs_dom_wrapper_events_types
 
+type base = Dom._dragEvent
 type t = Dom.dragEvent
 
 include Bs_dom_wrapper_events_event.Make(struct type nonrec t = t end)
