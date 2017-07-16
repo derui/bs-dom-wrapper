@@ -19,10 +19,10 @@ end
 type canvas
 type t = canvas Dom.htmlElement_like
 
-include Bs_dom_wrapper_nodes_event_target.Make(struct type t = Dom.element end)
-include Bs_dom_wrapper_nodes_node.Make(struct type t = Dom.element end)
-include Bs_dom_wrapper_nodes_element.Make(struct type t = Dom.element end)
-include Bs_dom_wrapper_html_element.Make(struct type t = Dom.element end)
+include Bs_dom_wrapper_nodes_event_target.Make(struct type nonrec t = t end)
+include Bs_dom_wrapper_nodes_node.Make(struct type nonrec t = t end)
+include Bs_dom_wrapper_nodes_element.Make(struct type nonrec t = t end)
+include Bs_dom_wrapper_html_element.Make(struct type nonrec t = t end)
 
 (* properties *)
 external height: t -> int = "" [@@bs.get]
