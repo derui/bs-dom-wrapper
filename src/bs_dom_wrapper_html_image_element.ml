@@ -22,7 +22,7 @@ external setHeight: t -> int -> unit = "height" [@@bs.set]
 external width: t -> int = "" [@@bs.get]
 external setWidth: t -> int -> unit = "width" [@@bs.set]
 external isMap: t -> bool = "" [@@bs.get]
-external setIsMap: t -> bool -> unit = "isMap" [@@bs.set]
+external setIsMap: t -> Js.boolean -> unit = "isMap" [@@bs.set]
 external src: t -> string = "" [@@bs.get]
 external setSrc: t -> string -> unit = "src" [@@bs.set]
 

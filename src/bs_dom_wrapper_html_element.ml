@@ -14,10 +14,10 @@ module Make(T:TYPE) = struct
   external dir: T.t -> string = "" [@@bs.get]
   external setDir: T.t -> string -> unit = "dir" [@@bs.set]
   external draggable: T.t -> bool = "" [@@bs.get]
-  external setDraggable: T.t -> bool -> unit = "draggable" [@@bs.set]
+  external setDraggable: T.t -> Js.boolean -> unit = "draggable" [@@bs.set]
 
   external hidden: T.t -> bool = "" [@@bs.get]
-  external setHidden: T.t -> bool -> unit = "hidden" [@@bs.set]
+  external setHidden: T.t -> Js.boolean -> unit = "hidden" [@@bs.set]
   external lang: T.t -> string = "" [@@bs.get]
   external setLang: T.t -> string -> unit = "lang" [@@bs.set]
   external offsetHeight: T.t -> float = "" [@@bs.get]
@@ -27,7 +27,7 @@ module Make(T:TYPE) = struct
   external offsetWidth: T.t -> float = "" [@@bs.get]
 
   external spellcheck: T.t -> bool = "" [@@bs.get]
-  external setSpellcheck: T.t -> bool -> unit = "spellcheck" [@@bs.set]
+  external setSpellcheck: T.t -> Js.boolean -> unit = "spellcheck" [@@bs.set]
 
   external style: T.t -> Dom.cssStyleDeclaration = "" [@@bs.get]
   external setStyle: T.t -> Dom.cssStyleDeclaration -> unit = "style" [@@bs.set]
