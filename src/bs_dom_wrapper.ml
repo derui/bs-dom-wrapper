@@ -7,3 +7,4 @@ module Blob = Bs_dom_wrapper_blob
 module File = Bs_dom_wrapper_file
 module File_reader = Bs_dom_wrapper_file_reader
 module Form_data = Bs_dom_wrapper_form_data
+module Data_transfer = Bs_dom_wrapper_data_transfer
