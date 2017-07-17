@@ -39,3 +39,4 @@ let getContext typ t =
   t |> getContext typ
 
 external toBlob: Blob.t = "" [@@bs.send.pipe:t]
+external toDataURL: string -> string = "" [@@bs.send.pipe:t]
