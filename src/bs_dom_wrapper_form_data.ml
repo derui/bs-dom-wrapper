@@ -1,8 +1,13 @@
 (* Declare FormData FFI *)
 
-module Blob = Bs_dom_wrapper_blob
+module type TYPE = sig
+  type t
+end
 
-type t
+module Make(T:TYPE) = struct
+  module Blob = Bs_dom_wrapper_blob
 
-external create : unit -> t = "FormData" [@@bs.new]
-external append : string -> Blob.t -> unit = "" [@@bs.send.pipe:t]
+  external create : unit -> T.t = "FormData" [@@bs.new]
+  external appendBlob : string -> Blob.t -> unit = "append" [@@bs.send.pipe:T.t]
+  external appendString : string -> string -> unit = "append" [@@bs.send.pipe:T.t]
+end
