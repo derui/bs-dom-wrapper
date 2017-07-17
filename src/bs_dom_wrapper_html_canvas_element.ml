@@ -10,6 +10,8 @@ module Context = struct
   (* binding drawImage *)
   external drawImage: Image_element.t -> int -> int -> unit = "" [@@bs.send.pipe:t]
   external drawImageWithDSize: Image_element.t -> int -> int -> int -> int -> unit = "drawImage" [@@bs.send.pipe:t]
+  external drawImageWithSSize: Image_element.t -> int -> int -> int -> int ->
+                               int -> int -> int -> int -> unit = "drawImage" [@@bs.send.pipe:t]
   external clearRect: int -> int -> int -> int -> unit = "" [@@bs.send.pipe:t]
   external strokeRect: int -> int -> int -> int -> unit = "" [@@bs.send.pipe:t]
   external strokeStyle: t -> string = "" [@@bs.get]
