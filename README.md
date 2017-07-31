@@ -12,4 +12,5 @@ npm run build
 npm run watch
 ```
 
-# LICENCE MIT
+# LICENCE
+MIT
