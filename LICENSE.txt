@@ -1,8 +1,6 @@
-(* Declare ParentNode FFI from bs-webapi-incubator *)
-(*
 MIT License
 
-Copyright (c) 2017 reasonml-community
+Copyright (c) 2017 Yuya Takahashi
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -21,23 +19,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
- *)
-
-(* Declare ParentNode FFI. *)
-module type TYPE = sig
-  type t
-end
-
-module Make(T:TYPE) = struct
-  (* properties *)
-  external children: T.t -> Dom.htmlCollection = "" [@@bs.get]
-  external firstElementChild: T.t -> Dom.element option = "" [@@bs.get] [@@bs.return null_to_opt]
-  external lastElementChild: T.t -> Dom.element option = "" [@@bs.get] [@@bs.return null_to_opt]
-  external childElementCount: T.t -> int = "" [@@bs.get]
-
-  (* methods *)
-  external querySelector: string -> Dom.element option = "" [@@bs.send.pipe:T.t] [@@bs.return null_to_opt]
-  external querySelectorAll: string -> Dom.htmlCollection = "" [@@bs.send.pipe:T.t] 
-end
-
-(* This module declares only functor. *)
