@@ -10,7 +10,7 @@ module Context_type = struct
     | Context2D -> "2d"
     | ContextWebGL -> "webgl"
     | ContextWebGL2 -> "webgl2"
-    | BitmapRenderer -> "bigmaprenderer"
+    | BitmapRenderer -> "bitmaprenderer"
 
 end
 
