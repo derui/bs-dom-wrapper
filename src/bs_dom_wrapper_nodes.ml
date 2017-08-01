@@ -1,7 +1,0 @@
-module Child_node = Bs_dom_wrapper_nodes_child_node
-module Document = Bs_dom_wrapper_nodes_document
-module Element = Bs_dom_wrapper_nodes_element
-module Node = Bs_dom_wrapper_nodes_node
-module Non_document_type_child_node = Bs_dom_wrapper_nodes_non_document_type_child_node
-module Parent_node = Bs_dom_wrapper_nodes_parent_node
-module Event_target = Bs_dom_wrapper_nodes_event_target
