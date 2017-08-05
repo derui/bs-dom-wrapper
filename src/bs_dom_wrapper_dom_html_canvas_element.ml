@@ -1,7 +1,11 @@
 (* Declare canvas element FFI *)
+(*
+bs-webapi has CanvasElement implementation, but it doesn't have some APIs to draw image element.
+And it is not include implementations for some inherited APIs.
+ *)
 
-module Types = Bs_dom_wrapper_html_types
-module Image_element = Bs_dom_wrapper_html_image_element
+module Types = Bs_dom_wrapper_dom_html_types
+module Image_element = Bs_dom_wrapper_dom_html_image_element
 module Blob = Bs_dom_wrapper_blob
 
 module Context = struct
@@ -21,10 +25,10 @@ end
 type canvas
 type t = canvas Dom.htmlElement_like
 
-include Bs_dom_wrapper_nodes_event_target.Make(struct type nonrec t = t end)
-include Bs_dom_wrapper_nodes_node.Make(struct type nonrec t = t end)
-include Bs_dom_wrapper_nodes_element.Make(struct type nonrec t = t end)
-include Bs_dom_wrapper_html_element.Make(struct type nonrec t = t end)
+include Bs_webapi.Dom.EventTarget.Impl(struct type nonrec t = t end)
+include Bs_webapi.Dom.Node.Impl(struct type nonrec t = t end)
+include Bs_webapi.Dom.Element.Impl(struct type nonrec t = t end)
+include Bs_webapi.Dom.HtmlElement.Impl(struct type nonrec t = t end)
 
 (* properties *)
 external height: t -> int = "" [@@bs.get]
@@ -33,10 +37,10 @@ external width: t -> int = "" [@@bs.get]
 external setWidth: t -> int -> unit = "width" [@@bs.set]
 
 (* methods *)
-external getContext: string -> Context.t = "" [@@bs.send.pipe:t]
+external getContextEx: string -> Context.t = "getContext" [@@bs.send.pipe:t]
 let getContext typ t =
   let typ = Types.Context_type.to_string typ in
-  t |> getContext typ
+  t |> getContextEx typ
 
 external toBlob: Blob.t = "" [@@bs.send.pipe:t]
 external toDataURL: string -> string = "" [@@bs.send.pipe:t]

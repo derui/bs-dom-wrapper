@@ -4,5 +4,8 @@
   "sources": [
     {"dir": "src", "public": "all"}
   ],
+  "bs-dependencies" : [
+    "bs-webapi"
+  ],
   "generate-merlin": true
 }

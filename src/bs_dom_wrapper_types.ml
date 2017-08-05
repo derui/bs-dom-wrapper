@@ -1,27 +1,4 @@
 
-module Event_type = struct
-  type t =
-    DOMContentLoaded
-  | Submit
-
-  let to_string = function
-    | DOMContentLoaded -> "DOMContentLoaded"
-    | Submit -> "submit"
-end
-
-module Button = struct
-  type t =
-    Left
-  | Middle
-  | Right
-
-  let of_int = function
-    | 0 -> Left
-    | 1 -> Middle
-    | 2 -> Right
-    | _ -> failwith "Unknown button"
-end
-
 module Drop_effect = struct
   type t =
     None
