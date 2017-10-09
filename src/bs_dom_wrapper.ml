@@ -7,7 +7,6 @@ module Form_data = Bs_dom_wrapper_form_data
 module URL = Bs_dom_wrapper_url
 
 module Data_transfer = Bs_dom_wrapper_data_transfer
-module Types = Bs_dom_wrapper_nodes_types
 
 module Dom = struct
   module HtmlTypes = Bs_dom_wrapper_dom_html_types
